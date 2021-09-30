@@ -1,441 +1,633 @@
+/*****************************************************FONT***************************************************************************/
+
 @font-face {
-    font-family: "balsamiqsans" ;
+    font-family: "balsamiqsans";
     src: url("../fonts/BalsamiqSans-Bold.ttf");
 }
+
 @font-face {
     font-family: "caveat";
     src: url("../fonts/Caveat-Bold.ttf");
 }
+
 @font-face {
     font-family: "qsand-medium";
     src: url("../fonts/Quicksand-Medium.ttf");
 }
-*{
-    
-    margin: 0;
+
+/***************************************************/
+
+* {
     padding: 0;
     box-sizing: border-box;
 }
 
-header{
-width: 100%;
-height: 50px;
-background:#F08080 ;
-color: #fff;
-font-family: "balsamiqsans";
- /* le doy una posicion fija */ 
-position: fixed;
-top:0;
-left:0;
-z-index: 100; /* para que este siempre por delante de los otros elementos*/ 
+/*****************************************************HEADER*************************************************************************/
+
+header {
+    width: 100%;
+    height: 50px;
+    background: #F08080;
+    color: #fff;
+    font-family: "balsamiqsans";
+    position: fixed;
+    /* le doy una posicion fija */
+    top: 0;
+    left: 0;
+    z-index: 100;
+    /* para que este siempre por delante de los otros elementos*/
 }
 
-.contenedor{
+.contenedor {
     width: 98%;
     margin: auto;
+    display: flex;
+    align-content: stretch;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
 }
-h1{
-    letter-spacing: 0.3125em;
+
+h1 {
+    
     text-shadow: 1px 1px 2px black;
     float: left;
+    display: contents;
 }
-/*limpio los float*/
-header .contenedor{
+
+header .contenedor {
     display: table;
+    /*limpio los float*/
 }
 
-/* MENU*/ 
- 
- #menu-bar{
-     display: none;
-
- }
- header label{
-     float: right;
-     font-size: 1.75em;
-     margin: 0.375em 0;
-     cursor: pointer;/*aparece la manito cuando estoy arriba*/
-    }
-
- .menu{
-     position: absolute;
-     top:7.610350076103501vh;/*donde comienza el menu*/
-     left: 0;
-     width: 100%;
-     height: 100vh;
-     background: rgba(123, 36, 28,0.9);/*transparencia*/
-     transition: all 0.5s;
-     transform: translateX(-100%);
- }
-
- .menu a{
-     display: block;
-     color: #fff;
-     height:7.610350076103501vh;
-     text-decoration: none;
-     padding: 2.2831050228310503vh;
-     border-bottom: 1px solid rgba(255,255,255,0.5);
- }
-
- .menu a:hover{
-     background: rgba(255,255,255,0.3);
+#menu-bar {
+    display: none;
 }
-#menu-bar:checked ~ .menu{
+
+header label {
+    float: right;
+    font-size: 1.75em;
+    margin: 0.375em 0;
+    cursor: pointer;
+    /*aparece la manito cuando estoy arriba*/
+}
+
+.menu {
+    position: absolute;
+    top: 7.610350076103501vh;
+    /*donde comienza el menu*/
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(240, 128, 128, 0.9);
+    transition: all 0.5s;
+    transform: translateX(-100%);
+}
+
+.menu a {
+    display: block;
+    color: #fff;
+    height: 7.610350076103501vh;
+    text-decoration: none;
+    padding: 2.2831050228310503vh;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.menu a:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+#menu-bar:checked~.menu {
     transform: translateX(0%);
 }
 
-section{
+section {
     width: 100%;
     margin-bottom: 25px;
 }
 
-/*Banner*/
-#banner{
-    margin-top: 7.610350076103501vh;
-    position: relative; 
+@media (min-width:1024px) {
+    .menu {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translateX(0%);
+        float: right;
+        display: flex;
+    
+    }
+    .menu a {
+        border: none;
+    }
+    header label {
+        display: none;
+    }
 }
 
-#banner img{  
+/*****************************************************BANNER*************************************************************************/
+
+#banner {
+    margin-top: 7.610350076103501vh;
+    position: relative;
+}
+
+#banner img {
     width: 100%;
     height: 100%;
 }
-#banner .contenedor{
+
+#banner .contenedor {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%) ;
-    
+    transform: translateX(-50%) translateY(-50%);
 }
 
-#banner h2{
-    font-size: 2em;
-    font-family: "balsamiqsans" ;
+#banner h2 {
+    font-size: 3em;
+    font-family: "balsamiqsans";
     text-shadow: 1px 1px 2px black;
-    color:#541A1A ;
+    color: #F4D03F;
+    -webkit-text-stroke: 2px black;
 }
 
 #banner a {
     display: block;
-    width: 100px;
-    color:#541A1A;
+    color: #541A1A;
     text-decoration: none;
     padding: 7px;
-    margin-top: 10px;
     background-color: #F08080;
     border: 3px solid #541A1A;
-}
-
-#banner a:hover{
-    background: rgba(123, 36, 28,0.9);
-
-}
-
-#banner p{
-    font-size: 1.25em;
     font-family: "balsamiqsans";
 }
 
-/*BOX 1 (Ingredientes)*/
+#banner a:hover {
+    background: rgba(123, 36, 28, 0.9);
+}
 
+#banner p {
+    font-size: 1.25em;
+    font-family: "balsamiqsans";
+    color: coral;
+    background-color: aliceblue;
+    
+}
+
+@media(min-width:1024px){
+    #banner {
+        height: 40vh;
+        overflow: hidden;
+    }
+    #banner img {
+       height: auto;        
+       margin-top: -200px;
+    }
+    #banner h2 {
+        font-size: 4em;
+        margin: auto;
+}
+   #banner p {
+       font-size: 2em;
+
+
+   }
+}
+/**************************************************BOX 1 (Ingredientes)**************************************************************/
+
+#box1 {
+    box-sizing: border-box;
+    width: 100%;
+    height: 59vh;
+    padding: 5px;
+    background-color: #FDEDEC;
+    display: flex;
+    align-items: center;
+}
+
+#ingredientes {
+    width: 50%;
+    height: 55vh;
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 6px;
+    overflow: auto;
+    background-color: #F5B7B1;
+    float: left;
+}
+
+#ingredientes h2 {
+    text-align: center;
+    font-family: "caveat";
+    color: #1C2833;
+    font-size: 5.80vw;
+}
+
+#ingredientes .ulingredientes {
+    list-style: none;
+    font-size: 1em;
+    font-family: "qsand-medium";
+    color: #1B2631;
+}
+
+@media(min-width:1024px){
 #box1{
     box-sizing: border-box;
     width: 100%;
-    height: 58vh;
+    height: 70vh;
     padding: 5px;
-    background-color: #FDEDEC;
     display: flex;
-   
+    align-items: center;
+    justify-content: space-around;
     
-    }
     
-    #ingredientes{
-    
-      width:50%;
-      height: 55vh;
-      box-sizing: border-box;
-      padding: 5px;
-      margin : 6px;
-      overflow: auto;
-      background-color: #F5B7B1;
-      float: left;
-    }
-    
-    #ingredientes h2{
-    
-      text-align: center;
-      font-family: "caveat" ;
-      color:#1C2833;
-      font-size: 5.80vw;
-    }
-    
-    #ingredientes .ulingredientes{
-      list-style: none;
-      font-size: 4vw;
-    font-family: "qsand-medium";
-   
-      color: #1B2631;
-    }
-    
-    .chipa1{
-    
-     margin: 6px;
-     box-sizing: border-box;
-    
-    }
-    
-    .chipa1 img{ 
-    border: black 2px solid;   
-    width: 50vw;
-    height: fit-content;
-
-
 }
-
- 
-
-
-   /*BOX 2(procedimiento)*/
-    #box2{
-        box-sizing: border-box;
-        width: 100%;
-        height: 58vh;
-        padding: 5px;
-        background-color: #FDEDEC;
-        display: flex;
-        justify-content: center;
-        
-        }
-        
-        #procedimiento{
-        
-          width:100%;
-          height: 55vh;
-          box-sizing: border-box;
-          padding: 5px;
-          margin : 6px;
-          overflow: auto;
-          background-color: #F5B7B1;
-          float: left;
-        }
-        
-        #procedimiento h2{
-        
-          text-align: center;
-          font-family: "caveat" ;
-          color:#1C2833;
-          font-size: 5.80vw;
-        }
-        
-        #procedimiento .olprocedimiento{
-          
-          font-size: 4vw;
-          font-family: "qsand-medium";
-          color: #1B2631;
-        }
-        
-/*VIDEO*/
-
-        #video{
-            box-sizing: content-box;
-            width: 100%;
-            height: 77vh;
-           
-            padding: auto;
-            background-color: #FDEDEC;
-
-        }
-      
-        #video .videoyt{
-        padding: 1em;
-        z-index: 100;
-        width: 100%;
-        height: 100%;
-    }
-
-/*Mas recetas*/
-
-#merienda{
-    box-sizing: border-box;
-    width: 100%;
-    height: 58vh;
-    padding: 5px;
-    background-color: #FDEDEC;
-    display: flex;
-
-
+#ingredientes{
+    width: 60%;
+    height: 65vh;
+    overflow: hidden;
 }
-
-#merienda h2{
-
-    text-align: center;
-    font-family: "caveat" ;
-    color:#1C2833;
-    font-size: 5.80vw;
-}
-#merienda .masrecetas
-{
-	margin-left: 4%;
-	padding: 0;
-	list-style: none;
-}
-#merienda .masrecetas li
-{
-	border-top: solid 1px #E5E5E5;
-	padding: 0.80em 0;
-}
-
-#merienda .masrecetas li:first-child{
-	border-top: 0;
-	padding-top: 1px;
-}
-#merienda .masrecetas li a {
-	text-decoration: none;
-	border-radius: 5px;
-  background-color: #E33E3E  ;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	color: #F4F0F0;
-	font-family: 'Balsamiq Sans', cursive;
-}
-#merienda .masrecetas li a:hover {
-	background-color: #FE3605;
-	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
-	transform: translateY(-7px);}
-
-
-/*CHIPA  DATOS*/
-
-#chipadatos{
-    box-sizing: content-box;
-    width: 100%;
-    height: 58vh;
-    padding: 5px;
-    background-color: #FDEDEC;
-    overflow: auto;
-    display: flex;
-  }
-#chipadatos .titulodatos{
-
-  margin-left: 1em;
-  font-family: 'Balsamiq Sans', cursive;
-  font-variant: small-caps;
-  font-size: 1em;
-  font-kerning: normal;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px black;
-
-}
-
-#chipadatos .textodatos{
-
-    font-family: 'Concert One', cursive;
-    font-size: 0.90em;
-    color: #000000;
+#ingredientes h2{
+    justify-content: center;
+    margin: auto;
   
 }
+#ingredientes .ulingredientes {
+    list-style: none;
+    font-size: 2em;
+    font-family: "qsand-medium";
+    color: #1B2631;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+}
 
-/*MAPA*/
-#map{
+/*****************************************************IMG CHIPA1*************************************************************************/
 
+.chipa1 {
+    margin: 6px;
+    box-sizing: border-box;
+}
+
+.chipa1 img {
+    border: black 2px solid;
+    width: 50vw;
+    height: fit-content;
+}
+@media(min-width:1024px){
+   
+    .chipa1 img{
+    width :100%;
+    height :50vh;
+    
+   }
+
+   section.chipa1 { 
+       width: 30%;
+   }
+}
+
+/******************************************BOX 2(procedimiento)*********************************************************************/
+
+#box2 {
     box-sizing: border-box;
     width: 100%;
-    height: 58vh;
+    height: 63vh;
+    padding: 5px;
+    background-color: #FDEDEC;
+    display: flex;
+    justify-content: center;
+}
+
+#procedimiento {
+    width: 100%;
+    height: 60vh;
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 6px;
+    overflow: auto;
+    background-color: #F5B7B1;
+    float: left;
+}
+
+#procedimiento h2 {
+    text-align: center;
+    font-family: "caveat";
+    color: #1C2833;
+    font-size: 2em;
+    margin:0;
+}
+
+#procedimiento .olprocedimiento {
+    font-size: 4vw;
+    font-family: "qsand-medium";
+    color: #1B2631;
+}
+@media(min-width:1024px){
+    
+#box2{
+        height: 89vh;
+    }
+#procedimiento h2{
+
+    font-size: 4em;
+}
+#procedimiento{
+    height: 84vh;
+    overflow: hidden;
+}
+#procedimiento .olprocedimiento {
+    font-size: 2vw;
+    list-style: none;
+}
+}
+
+/*******************************************************VIDEO***********************************************************************/
+
+#video {
+    box-sizing: content-box;
+    width: 100%;
+    height: 40vh;
+    padding: auto;
+    background-color: #FDEDEC;
+}
+
+#video .videoyt {
+    padding: 1em;
+    width: 100%;
+    height: 100%;
+}
+
+#video .publi{
+    display: none;
+}
+
+@media(min-width:1024px){
+
+    #video{
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        flex-direction: row;
+        align-content: space-between;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #video .videoyt{
+        width: 50%;
+    }
+   #video .publi{
+    height: 55vh;
+    display: block;
+  
+}
+}
+/************************************************************MAS RECETAS*************************************************************/
+
+#merienda {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40vh;
     padding: 5px;
     background-color: #FDEDEC;
     display: flex;
 }
 
-#map .map-responsive{
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-   
-
+#merienda h2 {
+    text-align: center;
+    font-family: "caveat";
+    color: #1C2833;
+    font-size: 5.80vw;
 }
 
-#map .map-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;}
+#merienda .masrecetas {
+    margin-left: 4%;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: center;
+}
 
-    /*PREGUNTA FINAL*/
+#merienda .masrecetas li {
+    border-top: solid 1px #E5E5E5;
+    padding: 0.80em 0;
+}
 
-#preguntafinal{
+#merienda .masrecetas li:first-child {
+    border-top: 0;
+    padding-top: 1px;
+}
+
+#merienda .masrecetas li a {
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #E33E3E;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    color: #F4F0F0;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+#merienda .masrecetas li a:hover {
+    background-color: #FE3605;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-7px);
+}
+@media(min-width:1024px){
+    #merienda {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    #merienda h2{
+    font-size: 4em;
+    }
+   #merienda .masrecetas{
+    font-size: 1.3em;
+}
+}
+
+
+/******************************************CHIPA  DATOS*****************************************************************************/
+
+#chipadatos {
+    width: 100%;
+    height: 60vh;
+    padding: 5px;
+    background-color: #FDEDEC;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+#chipadatos .titulodatos {
+
+    font-family: "qsand-medium";
+    font-variant: small-caps;
+    font-size: 2.5em;
+    font-kerning: normal;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    display: flex;
+    justify-content: center;
+    background-color: #F9ACAC;
+}
+
+#chipadatos .textodatos {
+    font-family: "caveat";
+    font-size: 1em;
+    color: #000000;
+}
+@media(min-width:1024px){
+    #chipadatos .titulodatos{
+        font-size: 3em;
+    }
+     #chipadatos .textodatos{
+    font-size: 2em;
+    }
+
+}
+/***********************************************************MAPA********************************************************************/
+
+#map {
+    box-sizing: border-box;
+    width: 100%;
+    height: 45vh;
+    padding: 5px;
+    background-color: #FDEDEC;
+    display: flex;
+}
+
+#map .map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+#map .map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+@media(min-width:1024px){
+    #map{
+    display: flex;
+    justify-content: center;
+   }
+   
+    #map .map-responsive{
+        padding-bottom: unset;
+        margin-bottom: unset;
+    }
+}
+/***********************************PREGUNTA FINAL***********************************************************************************/
+
+#preguntafinal {
     box-sizing: border-box;
     width: 100%;
     height: 30vh;
     padding: 5px;
     background-color: #FDEDEC;
     display: flex;
+}
 
-}    
-
-#preguntafinal .preguntafinal{
-    font-family:'Concert One', cursive;
+#preguntafinal .preguntafinal {
+    font-family: 'Concert One', cursive;
     font-size: 1.25em;
     color: #000000;
-  }
+}
 
-#carpinch{
+#preguntafinal .preguntafinal a {
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #E33E3E;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    color: #F4F0F0;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+#preguntafinal .preguntafinal a:hover {
+    background-color: #FE3605;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-7px);
+}
+@media(min-width:1024px){
+    #preguntafinal{
+        height: 25vh;
+    }
+    #preguntafinal .preguntafinal{
+        font-size: 2em;
+    }
+}
+/**********************************************IMG CARPINCHO*************************************************************************/
+
+#carpinch {
     box-sizing: border-box;
     width: 100%;
     height: 30vh;
     padding: 5px;
     background-color: #FDEDEC;
     display: flex;
-
+    align-content: stretch;
+    flex-direction: row;
+    justify-content: space-around;
 }
-#carpinch .carpincho{
-   position:unset;
+
+#carpinch .carpincho {
+    position: unset;
     height: auto;
     width: auto;
-    float: right;
     margin-right: 2em;
-    border: black 2px solid;
-    margin-bottom: 2em;
-
-
+    border-radius: 50%;
+    border: 5px solid #000000;
 }
 
-/*FOOTER*/
+/*****************************************************FOOTER*************************************************************************/
 
-footer{
-
+footer {
     box-sizing: border-box;
     width: 100%;
     height: 30vh;
     padding: 5px;
     background-color: #F08080;
     display: flex;
-
-
+    align-items: center;
 }
-#copyright p
-{
-	letter-spacing: 0.20em;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 0.80em;
-  color:#391212;
-	font-family: 'Balsamiq Sans', cursive;
+
+#copyright p {
+    letter-spacing: 0.20em;
+    text-align: center;
+    font-size: 1em;
+    color: #391212;
 
 }
 
-#copyright a
-{
-	text-decoration: none;
+#copyright a {
+    text-decoration: none;
 }
 
-
-.container a{
-color:#6E1928 ;
-
+.container a {
+    color: #6E1928;
 }
-.container a:hover{
-	background-color: #C53851 ;
-	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
-	transform: translateY(-7px);
 
-
+.container a:hover {
+    background-color: #C53851;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-7px);
+}
+@media(min-width:1024px){
+   footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+    #copyright{
+        font-size: 1.5em;
+    }
 }
